@@ -1,0 +1,188 @@
+
+; BlynkGOv3 Framework OTA for PlatformIO
+; -----------------------------------------------------
+
+[platformio] 
+default_envs = beenext_2_4c_USB 
+
+; - upload ครั้งแรก แบบทางสาย USB
+;    ให้เลือก default_envs อย่างใดอย่างหนึ่ง
+;    beenext_2_4r_USB, beenext_2_4c_USB, beenext_2_8r_USB  , beenext_3_2c_USB  , beenext_3_5c_USB, 
+;    beenext_4_3r_USB, beenext_4_3c_USB, beenext_4_3ips_USB, beenext_5_0ips_USB, beenext_7_0ips_USB
+;
+; - upload ครั้งถัดๆไป แบบทาง OTA ไวไฟไร้สาย
+;    ให้เลือก default_envs อย่างใดอย่างหนึ่ง
+;    beenext_2_4r_OTA, beenext_2_4c_OTA, beenext_2_8r_OTA  , beenext_3_2c_OTA  , beenext_3_5c_OTA, 
+;    beenext_4_3r_OTA, beenext_4_3c_OTA, beenext_4_3ips_OTA, beenext_5_0ips_OTA, beenext_7_0ips_OTA
+;
+; -----------------------------------------------------
+
+[env]
+monitor_speed = 9600
+platform = espressif32
+framework = arduino
+; build_flags = 
+;   -DCORE_DEBUG_LEVEL=5
+;   -DBLYNKO_USE_ASYNC_MQTT32=1
+lib_deps =
+  blynkgo/BlynkGOv3
+  blynkgo/BeeNeXT
+
+[env_USB]
+upload_protocol = esptool
+upload_port = COM3
+
+[env_OTA]
+upload_protocol = espota
+upload_port = 192.168.1.103
+
+; -----------------------------------------------------
+; USB
+; -----------------------------------------------------
+[env:beenext_2_4r_USB]
+board = beenext_2_4r
+board_build.partitions = default.csv
+upload_protocol = ${env_USB.upload_protocol}
+upload_port = ${env_USB.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_2_4c_USB]
+board = beenext_2_4c
+board_build.partitions = default.csv
+upload_protocol = ${env_USB.upload_protocol}
+upload_port = ${env_USB.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_2_8r_USB]
+board = beenext_2_8r
+board_build.partitions = default.csv
+upload_protocol = ${env_USB.upload_protocol}
+upload_port = ${env_USB.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_3_2c_USB]
+board = beenext_3_2c
+board_build.partitions = default.csv
+upload_protocol = ${env_USB.upload_protocol}
+upload_port = ${env_USB.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_3_5c_USB]
+board = beenext_3_5c
+board_build.partitions = default.csv
+upload_protocol = ${env_USB.upload_protocol}
+upload_port = ${env_USB.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_4_3r_USB]
+board = beenext_4_3r
+board_build.partitions = default_16MB.csv
+upload_protocol = ${env_USB.upload_protocol}
+upload_port = ${env_USB.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_4_3c_USB]
+board = beenext_4_3c
+board_build.partitions = default_16MB.csv
+upload_protocol = ${env_USB.upload_protocol}
+upload_port = ${env_USB.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_4_3ips_USB]
+board = beenext_4_3ips
+board_build.partitions = default_16MB.csv
+upload_protocol = ${env_USB.upload_protocol}
+upload_port = ${env_USB.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_5_0ips_USB]
+board = beenext_5_0ips
+board_build.partitions = default_16MB.csv
+upload_protocol = ${env_USB.upload_protocol}
+upload_port = ${env_USB.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_7_0ips_USB]
+board = beenext_7_0ips
+board_build.partitions = default_16MB.csv
+upload_protocol = ${env_USB.upload_protocol}
+upload_port = ${env_USB.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+
+
+
+; -----------------------------------------------------
+; OTA
+; -----------------------------------------------------
+[env:beenext_2_4r_OTA]
+board = beenext_2_4r
+board_build.partitions = default.csv
+upload_protocol = ${env_OTA.upload_protocol}
+upload_port = ${env_OTA.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_2_4c_OTA]
+board = beenext_2_4c
+board_build.partitions = default.csv
+upload_protocol = ${env_OTA.upload_protocol}
+upload_port = ${env_OTA.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_2_8r_OTA]
+board = beenext_2_8r
+board_build.partitions = default.csv
+upload_protocol = ${env_OTA.upload_protocol}
+upload_port = ${env_OTA.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_3_2c_OTA]
+board = beenext_3_2c
+board_build.partitions = default.csv
+upload_protocol = ${env_OTA.upload_protocol}
+upload_port = ${env_OTA.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_3_5c_OTA]
+board = beenext_3_5c
+board_build.partitions = default.csv
+upload_protocol = ${env_OTA.upload_protocol}
+upload_port = ${env_OTA.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_4_3r_OTA]
+board = beenext_4_3r
+board_build.partitions = default_16MB.csv
+upload_protocol = ${env_OTA.upload_protocol}
+upload_port = ${env_OTA.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_4_3c_OTA]
+board = beenext_4_3c
+board_build.partitions = default_16MB.csv
+upload_protocol = ${env_OTA.upload_protocol}
+upload_port = ${env_OTA.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_4_3ips_OTA]
+board = beenext_4_3ips
+board_build.partitions = default_16MB.csv
+upload_protocol = ${env_OTA.upload_protocol}
+upload_port = ${env_OTA.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_5_0ips_OTA]
+board = beenext_5_0ips
+board_build.partitions = default_16MB.csv
+upload_protocol = ${env_OTA.upload_protocol}
+upload_port = ${env_OTA.upload_port}
+lib_deps = ${env.lib_deps}
+; -----------------------------------------------------
+[env:beenext_7_0ips_OTA]
+board = beenext_7_0ips
+board_build.partitions = default_16MB.csv
+upload_protocol = ${env_OTA.upload_protocol}
+upload_port = ${env_OTA.upload_port}
+lib_deps = ${env.lib_deps}
+; ---------------------------------------------------- 
+
