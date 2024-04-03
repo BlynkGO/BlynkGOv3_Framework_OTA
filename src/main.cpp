@@ -1,4 +1,6 @@
 /* ตัวอย่าง OTA ให้กำหนดเลือกบอร์ดที่ platformio.ini */
+/* ดูคำอธิบาย วิธี upload ทาง USB และ ทาง OTA ใน platformio.ini */
+
 
 #include <BlynkGOv3.h>
 #include "project.h"
@@ -13,11 +15,12 @@ void setup() {
 
 void loop() {
   BlynkGO.update();
-  BasicOTA::handle();
-  // WebServerOTA::handle();
+  BasicOTA::handle();           // OTA แบบ Basic
+  // WebServerOTA::handle();    // OTA แบบ WebServer
 }
 
 WIFI_CONNECTED(){
-  BasicOTA::begin(); 
-  //  WebServerOTA::begin();
+  BasicOTA::begin();            // OTA แบบ Basic
+  //  WebServerOTA::begin();    // OTA แบบ WebServer
 }
+
